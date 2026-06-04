@@ -1,0 +1,1 @@
+export const API_BASE_URL = "https://studyplan-backend-su6t.onrender.com/api";
