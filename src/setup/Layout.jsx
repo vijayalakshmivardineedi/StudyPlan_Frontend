@@ -13,19 +13,26 @@ import History from "../history/History.jsx";
 
 const Layout = () => {
   const navigate = useNavigate();
-  useEffect(() => {
-    setTimeout(() => {
-      if (window.location.pathname === "/") {
-        navigate("/login");
-      }
-    }, 3000);
-  }, []);
+
   useEffect(() => {
     const token = localStorage.getItem("token");
-    if (token) {
+
+    // If user has token, redirect to profile immediately
+    if (token && window.location.pathname === "/") {
       navigate("/profile");
+      return;
     }
-  }, []);
+
+    // If on home page and no token, show welcome page then redirect to login
+    if (window.location.pathname === "/") {
+      const timer = setTimeout(() => {
+        navigate("/login");
+      }, 3000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [navigate]);
+
   return (
     <div className="layout">
       <Routes>

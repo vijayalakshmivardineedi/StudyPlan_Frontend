@@ -7,12 +7,12 @@ const Navbar = () => {
   const handleLogout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("student");
-    navigate("/login");
+    navigate("/");
   };
 
   return (
     <div className="navbar">
-      <div className="logo-container">
+      <div className="logo-container" onClick={() => navigate("/")}>
         <img src="/logo.png" alt="Logo" className="navbar-logo" />
       </div>
 

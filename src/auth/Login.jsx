@@ -41,7 +41,7 @@ const Login = () => {
           JSON.stringify(data.data.student),
         );
         setLoading(false);
-        navigate("/home");
+        navigate("/profile");
       } else {
         alert(data.message);
         setLoading(false);
