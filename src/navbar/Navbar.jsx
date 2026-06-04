@@ -13,11 +13,7 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <div className="logo-container">
-        <img
-          src="../../../public/logo.png"
-          alt="Logo"
-          className="navbar-logo"
-        />
+        <img src="/logo.png" alt="Logo" className="navbar-logo" />
       </div>
 
       <nav className="nav-links">
@@ -51,7 +47,7 @@ const Navbar = () => {
             isActive ? "nav-link active" : "nav-link"
           }
         >
-         History
+          History
         </NavLink>
       </nav>
 
